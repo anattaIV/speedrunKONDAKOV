@@ -1,0 +1,52 @@
+telnet httpbin.org 80 - подключаюсь к серверу через telnet. windows открыло TCP соединение на порте 80. TCP - транспортный протокол, который безопасно передает данные между сервером и мной. Тут http еще не передан, TCP просто открыл канал.
+
+HEAD /get HTTP/1.0 - метод HEAD, сервер вернет только заголовки, без тела(что то типа GET, но опять же, в отличии от GET без заголовка). get - путь к ресурсу. HTTP/1.0 - версия
+Host: httpbin.org - сервер понимает к какому хосту идет запрос. 
+User-Agent: telnet-client - инфа о клиенте
+----------------
+telnet httpbin.org 80
+
+GET /get HTTP/1.0
+Host: httpbin.org
+User-Agent: telnet-client
+
+
+curl https://httpbin.org/get
+
+-
+{
+  "args": {}, - ГЕТ параметров нет
+  "headers": { - заголовок
+    "Accept": "*/*", - принимает любой фформат
+    "Host": "httpbin.org", 
+    "User-Agent": "curl/8.16.0",
+    "X-Amzn-Trace-Id": "Root=1-693ff0d3-1667318a64f6d8d61945214f"
+  },
+  "origin": "85.90.208.106",
+  "url": "https://httpbin.org/get"
+}
+-
+
+----------------
+curl -H "X-My-Header: test" https://httpbin.org/get
+
+HEAD /get HTTP/1.0 
+Host: httpbin.org 
+User-Agent: telnet-client
+-
+{
+  "args": {}, - ГЕТ параметров нет
+  "headers": { - заголовок
+    "Accept": "*/*", - принимает любой формат
+    "Host": "httpbin.org", - сервер на который отправлен запрос
+    "User-Agent": "curl/8.16.0", - твоя версия
+    "X-Amzn-Trace-Id": "Root=1-693ff042-267de06e7751fe381d2e30f0", - автоматический заголовок AWS
+    "X-My-Header": "test"
+  },
+  "origin": "85.90.208.106",
+  "url": "https://httpbin.org/get"
+}
+
+
+
+

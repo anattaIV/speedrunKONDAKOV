@@ -1,0 +1,30 @@
+Тело HTTP запроса
+   это часть запроса, в которой передаются данные. Тело отделяется от заголовка пустой \n\n
+Структура запроса
+   Стартовая строка: POST /api HTTP/1.1
+   Заголовки: (Host, Content-Length, Content-Type
+   Пустая строка(отделяет тело от заголовка)
+   Тело(опционально)
+ Пример
+  POST /post HTTP/1.1
+  Host: httpbin.org
+  Content-Type: application/x-www-form-urlencoded
+  Content-Length: 17
+
+  name=Alice&age=25
+Стркуртура ответа
+   Статусная строка: Версия, код, пояснение (HTTP/1.1 200 OK).
+   Заголовки: Метаданные (Content-Type, Content-Length).
+   Пустая строка
+   Тело (опционально): Данные от сервера.
+ Пример
+  HTTP/1.1 200 OK
+  Content-Type: application/json
+  Content-Length: 259
+
+  {"name":"Alice","age":25}
+Заголовки работающие с телом
+   Content-Length: Размер тела в байтах. Важно, чтобы сервер знал, где тело заканчивается.
+   Content-Type: Формат данных (application/json, application/x-www-form-urlencoded).
+   Transfer-Encoding: chunked: Используется для передачи данных частями, вместо Content-Length.
+

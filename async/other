@@ -1,0 +1,9 @@
+Call stack(Синхронные задачи)
+Web Api(fetch, DOM события)
+MacroTask(setTimeOut, Interval, события)
+MicroTask(then catch)
+EventLoop(Проверяет Call stack и добавляет задачи из очереди)
+Promise
+  Pending
+  Fulfilled
+  Rejected

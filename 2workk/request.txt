@@ -1,0 +1,21 @@
+curl --http1.1 -H "Host: httpbin.org" https://httpbin.org/get
+
+curl --http1.1 https://httpbin.org/get 
+
+---------
+
+curl -v --http1.1 https://httpbin.org/get https://httpbin.org/headers
+* Connection #0 to host httpbin.org left intact
+
+---------
+
+telnet httpbin.org 80
+
+GET /get HTTP/1.1
+Host: httpbin.org
+Accept: application/json
+
+HEAD /headers HTTP/1.1
+Host: httpbin.org
+
+---------

@@ -1,0 +1,18 @@
+telnet httpbin.org 80
+
+HEAD /get HTTP/1.0
+Host: httpbin.org
+User-Agent: telnet-client
+
+---------
+telnet httpbin.org 80
+
+GET /get HTTP/1.0
+Host: httpbin.org
+User-Agent: telnet-client
+
+---
+curl https://httpbin.org/get
+
+---------
+curl -H "X-My-Header: test" https://httpbin.org/get
