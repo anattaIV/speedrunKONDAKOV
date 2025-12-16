@@ -1,0 +1,4 @@
+curl -v --http1.1 https://httpbin.org/stream/3
+curl --http1.1 https://httpbin.org/stream-bytes/20
+ * Transfer-Encoding: chunked
+-------

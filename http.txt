@@ -1,0 +1,80 @@
+1workk
+Что такое HTTP?
+Особенности HTTP 1.0? Stateless?
+Stateless?
+Методы?
+Нижележащие протоколы?
+Порты?
+Стркутура HTTP запроса?
+Структура HTTP ответа?
+Основные коды
+---------
+2workk
+Улучшения
+Новые методы
+---------
+3workk
+Тело запроса(body)
+Заголовки для работы с телом
+---------
+4workk
+Основные форматы данных
+   json
+      {"login":"smith","password":"12345678"}
+   x-www-form-urlencoded
+      login=smith&password=12345678
+--------
+5workk
+Проблема передачи данных неизвестного размера
+Стркутура чанка
+   8\r\n
+   Chunk 1\r\n
+   8\r\n
+   Chunk 2\r\n
+   0\r\n\r\n
+r - ?
+n - ?
+--------
+6workk
+Query string - 
+ /search?query=book&lang=en
+ /get?query=java&lang=en
+Идемпотентность GET
+Неидемпотентность POST
+Query string в POST
+ POST /login?source=web
+--------
+7workk
+HTTP-редирект
+ GET / HTTP/1.1
+ Host: example.com
+
+ HTTP/1.1 301 Moved Permanently
+ Location: https://example.com/new-page
+Зачем нужны редиректы?
+Коды редиректов
+ 301
+ 302
+ 303
+ 307
+ 308
+Абсолютный и относительный Location
+Повеедение клиентов (Браузер/curl/telnet)
+---------
+8workk
+Базовая ауентификация
+Формирование заголовка Authorization
+ Authorization: Basic dXNlcjpwYXNz
+---------
+9workk
+curl
+Ключевые флаги curl
+ -X, --request <XXX>
+  curl -X POST ...
+ -H, --header <заголовок>
+  -H "Content-Type: application/json"
+ -d, --data <данные>
+ -v, --verbose
+ --head
+ -o <файл>
+ -L, --location

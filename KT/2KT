@@ -1,0 +1,4 @@
+GET /posts HTTP/1.1
+Host: hexlet.local
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJleGVyY2lzZSIsIm5hbWUiOiJoZXhsZXQiLCJpYXQiOjE1MTgyMzQ1OTkxfQ.8wLn2cpbVhnwU-J8fSjvBcM8KGMb6Db4dKQVyYaryCo
+
