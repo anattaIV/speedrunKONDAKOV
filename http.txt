@@ -37,7 +37,7 @@ n - ?
 --------
 6workk
 Query string - 
- /search?query=book&lang=en
+ /search?query=book&lan   g=en
  /get?query=java&lang=en
 Идемпотентность GET
 Неидемпотентность POST
@@ -71,7 +71,7 @@ curl
 Ключевые флаги curl
  -X, --request <XXX>
   curl -X POST ...
- -H, --header <заголовок>
+ -H, --header <XXX>
   -H "Content-Type: application/json"
  -d, --data <данные>
  -v, --verbose
